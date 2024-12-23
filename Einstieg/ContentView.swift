@@ -8,17 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var viewModel =
+        ViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        NavigationStack {
+            List {
+                ForEach(viewModel.topics, id: \.self) { topic in
+                    NavigationLink(topic.title) {
+                        DetailView(topic: topic)
+                    }
+                }
+                .navigationTitle("Swift Lernen")
+            }
         }
-        .padding()
+        
+
     }
 }
 
 #Preview {
     ContentView()
 }
+
+//Tutorial: https://www.youtube.com/watch?v=mTe-2J8ptSU&t=1225s
