@@ -19,15 +19,15 @@ struct DetailView: View {
                 Text("Erklärung")
                     .font(.title)
                     .bold()
-                    .foregroundStyle(Color.gray)
+//                  .foregroundStyle(Color.black)
                 
                 Text(topic.explanation)
                 
                 Text("Code-Beispiel")
                     .font(.title)
                     .bold()
-                    .foregroundStyle(Color.gray)
-                
+//                  .foregroundStyle(Color.black)
+
                 Text(topic.codeSnippet)
                     .font(.system(size: 14,
                                   design: .monospaced))
